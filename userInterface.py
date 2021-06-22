@@ -1,11 +1,18 @@
 @staticmethod
-def get_string(prompt):
-    user_input = input(prompt)
-    return user_input
+def get_user_input_string(prompt):
+    try:
+        user_input = input(prompt)
+        return user_input
+    except ValueError:
+        return input("Please enter a Name")
 
 
-def get_user_number(prompt):
-    pass
+def get_user_input_number(prompt):
+    try:
+        user_input = int(input(prompt))
+        return user_input
+    except ValueError:
+        return int(input("Please enter a Number"))
 
 
 def contestant_info(contestant):
@@ -24,5 +31,5 @@ def display_marketing_firm_menu(marketing_firm_name):
     pass
 
 
-def dispaly_sweepstakes_menu_options(sweepstakes_name):
+def display_sweepstakes_menu_options(sweepstakes_name):
     pass
