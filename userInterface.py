@@ -4,7 +4,7 @@ def get_user_input_string(prompt):
         user_input = input(prompt)
         return user_input
     except ValueError:
-        return input("Please enter a Name")
+        return input("Please enter words and letters")
 
 
 def get_user_input_number(prompt):
@@ -13,6 +13,12 @@ def get_user_input_number(prompt):
         return user_input
     except ValueError:
         return int(input("Please enter a Number"))
+
+def send_user_menu_message(string):
+    print(string)
+    return print(string)
+
+def send_user_print_message():
 
 
 def contestant_info(contestant):
