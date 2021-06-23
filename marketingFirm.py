@@ -19,13 +19,28 @@ class MarketingFirm:
         pass
 
     # send_user_menu_message(self.sweepstakes_storage)
-    # userInterface.get_user_input_string("Select a sweepstake ")
+    # userInterface.get_user_input_string("Select a sweepstake")
     # or
 
     def menu(self):
-        pass
-    # facade pattern
-    # send_user_menu_message( 1 - create_sweepstakes() - )
-    # send_user_menu_message( 2 - change_marketing_firm_name() - )
-    # send_user_menu_message( 3 - select_sweepstakes() - )
-    # send_user_menu_message( 4 - exit_menu() - )
+        menu_choice = True
+        while menu_choice:
+            userInterface.display_message("""
+            1.create sweepstakes
+            2.change marketing firm name
+            3.select sweepstakes
+            4.exit menu
+            """
+                                          )
+            menu_choice = userInterface.get_user_input_number("Please Enter A number? ")
+            if menu_choice == "1":
+                self.create_sweepstakes()
+            elif menu_choice == "2":
+                self.change_marketing_firm_name()
+            elif menu_choice == "3":
+                self.select_sweepstakes()
+            elif menu_choice == "4":
+                userInterface.display_message("\n Exiting Menu")
+                break
+            else:
+                userInterface.get_user_input_number("\n Not Valid Choice Try again")
