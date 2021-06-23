@@ -10,19 +10,22 @@ class MarketingFirm:
     @staticmethod
     def create_sweepstakes():
         sweepStakes.name = userInterface.get_user_input_string("What is the Name of the Sweepstake?")
-        sweepStakes.contestants = {}
+        sweepStakes.contestants = {}  # maybe just pre populate a list of sweepstakes sweep 1, sweep2, ect
 
     def change_marketing_firm_name(self):
         self.name = userInterface.get_user_input_string("What is the Name of the Marketing Firm")
 
     def select_sweepstakes(self):
         pass
-# send_user_menu_message(self.sweepstakes_storage)
-# userInterface.get_user_input_string("Select a contestant ")
+
+    # send_user_menu_message(self.sweepstakes_storage)
+    # userInterface.get_user_input_string("Select a sweepstake ")
     # or
+
     def menu(self):
         pass
-# send_user_menu_message( 1 - create_sweepstakes() - )
-# send_user_menu_message( 2 - change_marketing_firm_name() - )
-# send_user_menu_message( 3 - select_sweepstakes() - )
-# send_user_menu_message( 4 - exit_menu() - )
+    # facade pattern
+    # send_user_menu_message( 1 - create_sweepstakes() - )
+    # send_user_menu_message( 2 - change_marketing_firm_name() - )
+    # send_user_menu_message( 3 - select_sweepstakes() - )
+    # send_user_menu_message( 4 - exit_menu() - )

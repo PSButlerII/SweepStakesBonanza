@@ -1,4 +1,4 @@
-@staticmethod
+
 def get_user_input_string(prompt):
     try:
         user_input = input(prompt)
@@ -14,11 +14,10 @@ def get_user_input_number(prompt):
     except ValueError:
         return int(input("Please enter a Number"))
 
-def send_user_menu_message(string):
-    print(string)
-    return print(string)
 
-def send_user_print_message():
+def display_message(string):
+    print(string)
+    return string
 
 
 def contestant_info(contestant):

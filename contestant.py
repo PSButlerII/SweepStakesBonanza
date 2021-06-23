@@ -1,12 +1,13 @@
-import sweepStakes
+from sweepStakes import Sweepstakes
+import userInterface
 
 
-class Contestants:
+class Contestant:
     def __init__(self):
-        self.first_name = ''
-        self.last_name = ''
-        self.email_address = ''
-        self.registration_number = '' # should equal the length of (sweepStakes.contestants)
+        self.first_name = userInterface.get_user_input_string("What is Your First Name?")
+        self.last_name = userInterface.get_user_input_string("What is Your Last Name?")
+        self.email_address = userInterface.get_user_input_string("What is Your Email Address?")
+        self.registration_number = len(Sweepstakes.contestants)
 
     def notify(self, is_winner):
         pass
