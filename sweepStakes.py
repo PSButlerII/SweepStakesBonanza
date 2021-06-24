@@ -11,17 +11,18 @@ class Sweepstakes:
         self.contestants = {}
 
 
-    def register_contestant(self):
-        sweepstake_contestant = contestant.Contestant()
-        self.contestants.update(sweepstake_contestant)
+    @staticmethod
+    def register_contestant():
+        contestant.Contestant()
+
 
     def pick_winner(self):  # should return a contestant
         return random.choice(list(self.contestants))
         # notify the winner that they won and all the other contestants that they lost
 
     def view_contestants(self):
-        # for contestants in self.contestants:
-        userInterface.display_message(self.contestants.items())
+        for contestant.Contestant in range(self.contestants):
+            userInterface.get_user_input_string(contestant.Contestant)
         # this just displays the contestant names in the list
 
     def sweepstakes_menu(self):
@@ -36,11 +37,11 @@ class Sweepstakes:
             """)
             menu_choice = userInterface.get_user_input_number("Please Enter A number? ")
             if menu_choice == 1:
-                self.view_contestants()
+                Sweepstakes.view_contestants(self)
             elif menu_choice == 2:
-                self.register_contestant()
+                Sweepstakes.register_contestant()
             elif menu_choice == 3:
-                self.pick_winner()
+                Sweepstakes.pick_winner(self)
             elif menu_choice == 4:
                 userInterface.display_message("\n Exiting Menu")
                 break
