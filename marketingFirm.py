@@ -18,11 +18,15 @@ class MarketingFirm:
         self.name = userInterface.get_user_input_string("What is the Name of the Marketing Firm")
 
 
-    @staticmethod
-    def select_sweepstakes(self=None):
-        userInterface.display_sweepstakes_selection_menu()
+
+
+    def select_sweepstakes(self):
+        userInterface.display_sweepstakes_selection_menu(self)
         all_sweepstakes = userInterface.get_user_input_number("Select a sweepstake number")
-        sweepStakes.Sweepstakes.sweepstakes_menu(self)
+        # for all_sweepstakes in enumerate(MarketingFirm.sweepstakes_storage, start=1):
+        all_sweepstakes.contestants.update([all_sweepstakes])
+        sweepStakes.Sweepstakes.sweepstakes_menu(all_sweepstakes)
+        return all_sweepstakes
 
 
     def marketing_firm_menu(self):

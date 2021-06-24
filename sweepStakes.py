@@ -12,7 +12,7 @@ class Sweepstakes:
 
 
     def register_contestant(self):
-        Contestant(sweepstake_contestant)
+        sweepstake_contestant = contestant.Contestant()
         self.contestants.update(sweepstake_contestant)
 
     def pick_winner(self):  # should return a contestant
@@ -25,6 +25,7 @@ class Sweepstakes:
         # this just displays the contestant names in the list
 
     def sweepstakes_menu(self):
+
         menu_choice = True
         while menu_choice:
             userInterface.display_message("""

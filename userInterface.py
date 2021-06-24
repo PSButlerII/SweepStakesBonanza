@@ -37,10 +37,12 @@ def display_sweepstakes_info(self):
         display_message(sweepstakes)
 
 
-def display_sweepstakes_selection_menu():
+def display_sweepstakes_selection_menu(all_sweepstakes):
     print("SWEEPSTAKE LISTINGS")
     for sweepstake_number, sweepstake in enumerate(marketingFirm.MarketingFirm.sweepstakes_storage, start=1):
         print(sweepstake_number, sweepstake)
+    if all_sweepstakes in enumerate(marketingFirm.MarketingFirm.sweepstakes_storage, start=1):
+        all_sweepstakes.contestants.update(all_sweepstakes)
 
 
 
