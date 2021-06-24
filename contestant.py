@@ -1,6 +1,5 @@
 import sweepStakes
 import userInterface
-from sweepStakes import Sweepstakes
 
 
 class Contestant:

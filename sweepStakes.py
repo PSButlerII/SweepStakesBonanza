@@ -6,39 +6,40 @@ from contestant import Contestant
 
 
 class Sweepstakes:
-
     def __init__(self):
         self.name = ''
         self.contestants = {}
 
-    def register_contestant(self, contestants):
+    @staticmethod
+    def register_contestant(contestants):
         contestants = Contestant()
 
     def pick_winner(self):  # should return a contestant
         return random.choice(list(self.contestants))
+        # notify the winner that they won and all the other contestants that they lost
 
     def view_contestants(self):
         # for contestants in self.contestants:
         userInterface.display_message(self.contestants.items())
+        # this just displays the contestant names in the list
 
-    def menu(self):
+    def sweepstakes_menu(self):
         menu_choice = True
         while menu_choice:
             userInterface.display_message("""
-            1.view Contestant
-            2.register new contestant 
-            3.pick winner
-            4.exit menu
-            """
-                                          )
-            menu_choice = userInterface.get_user_input_number("What would you like to do? ")
-            if menu_choice == "1":
+            1.View Contestant
+            2.Register New Contestant 
+            3.Pick Winner
+            4.Exit Menu
+            """)
+            menu_choice = userInterface.get_user_input_number("Please Enter A number? ")
+            if menu_choice == 1:
                 self.view_contestants()
-            elif menu_choice == "2":
+            elif menu_choice == 2:
                 self.register_contestant(contestant)
-            elif menu_choice == "3":
+            elif menu_choice == 3:
                 self.pick_winner()
-            elif menu_choice == "4":
+            elif menu_choice == 4:
                 userInterface.display_message("\n Exiting Menu")
                 break
             else:

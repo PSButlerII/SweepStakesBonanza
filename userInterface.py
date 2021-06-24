@@ -1,3 +1,6 @@
+import marketingFirm
+import sweepStakes
+
 
 def get_user_input_string(prompt):
     try:
@@ -21,20 +24,27 @@ def display_message(string):
 
 
 def contestant_info(contestant):
-    pass
+    display_message(f"{len(contestant.Contestant.contestants)}.  {contestant.Contestant.contestants}")
+    for contestant in contestant.Contestant.contestants:
+        display_message(contestant)
 
 
-def display_sweepstakes_info(sweepstakes):
-    pass
+# this is going to print the information about the contestant
+
+def display_sweepstakes_info(self):
+    for sweepstakes in self.marketingFirm.sweepstakes_storage:
+        display_message(sweepstakes)
 
 
 def display_sweepstakes_selection_menu(all_sweepstakes):
-    pass
+    display_message(
+        f"{len(marketingFirm.MarketingFirm.sweepstakes_storage)}.  {marketingFirm.MarketingFirm.sweepstakes_storage}")
+    sweepStakes.Sweepstakes.sweepstakes_menu(all_sweepstakes)
 
 
 def display_marketing_firm_menu(marketing_firm_name):
-    pass
+    marketingFirm.MarketingFirm.marketing_firm_menu(marketing_firm_name)
 
 
 def display_sweepstakes_menu_options(sweepstakes_name):
-    pass
+    sweepStakes.Sweepstakes.sweepstakes_menu(sweepstakes_name)
