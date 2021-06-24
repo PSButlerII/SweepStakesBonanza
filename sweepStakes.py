@@ -6,13 +6,14 @@ from contestant import Contestant
 
 
 class Sweepstakes:
-    def __init__(self):
-        self.name = ''
+    def __init__(self, name):
+        self.name = name
         self.contestants = {}
 
-    @staticmethod
-    def register_contestant(contestants):
-        contestants = Contestant()
+
+    def register_contestant(self):
+        Contestant(sweepstake_contestant)
+        self.contestants.update(sweepstake_contestant)
 
     def pick_winner(self):  # should return a contestant
         return random.choice(list(self.contestants))
@@ -36,7 +37,7 @@ class Sweepstakes:
             if menu_choice == 1:
                 self.view_contestants()
             elif menu_choice == 2:
-                self.register_contestant(contestant)
+                self.register_contestant()
             elif menu_choice == 3:
                 self.pick_winner()
             elif menu_choice == 4:

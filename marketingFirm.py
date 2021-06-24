@@ -1,31 +1,29 @@
 import sweepStakes
-from sweepStakes import Sweepstakes
 import userInterface
 
 
 class MarketingFirm:
-
     sweepstakes_storage = []
 
     def __init__(self):
         self.name = "marketing_firm_name"
 
 
-
     def create_sweepstakes(self):
-        sweepStakes.name = userInterface.get_user_input_string("What is the Name of the Sweepstake?")
-        sweepStakes.contestants = {}  # maybe just pre populate a list of sweepstakes sweep 1, sweep2, ect
-        self.sweepstakes_storage.append(sweepStakes)
+        sweepstake_name = userInterface.get_user_input_string("What is the Name of the Sweepstake?")
+        self.sweepstakes_storage.append(sweepstake_name)
         MarketingFirm.marketing_firm_menu(self)
-
 
     def change_marketing_firm_name(self):
         self.name = userInterface.get_user_input_string("What is the Name of the Marketing Firm")
-        return userInterface.display_marketing_firm_menu(self)
 
-    def select_sweepstakes(self):
-        userInterface.get_user_input_number(f"{len(self.sweepstakes_storage)}. {self.sweepstakes_storage}.  Select a sweepstake number")
+
+    @staticmethod
+    def select_sweepstakes(self=None):
         userInterface.display_sweepstakes_selection_menu()
+        all_sweepstakes = userInterface.get_user_input_number("Select a sweepstake number")
+        sweepStakes.Sweepstakes.sweepstakes_menu(self)
+
 
     def marketing_firm_menu(self):
         menu_choice = True
@@ -48,5 +46,3 @@ class MarketingFirm:
                 break
             else:
                 userInterface.get_user_input_number("\n Not Valid Choice Try again")
-
-
